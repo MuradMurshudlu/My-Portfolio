@@ -1,0 +1,182 @@
+/* 1. Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #dfd3b5;
+    width: 100%;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden; /* Sürüşməni tamamilə bloklayır */
+}
+
+/* 2. Professional Navbar (Glassmorphism) */
+.container {
+    background: rgba(227, 189, 144, 0.8);
+    backdrop-filter: blur(15px);
+    width: 90%;
+    max-width: 1200px;
+    height: 75px;
+    border-radius: 50px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    position: sticky;
+    top: 20px;
+    z-index: 1000;
+}
+
+.social-media {
+    display: flex;
+    gap: 15px;
+}
+
+.icon-link {
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.icon-link:hover {
+    transform: translateY(-5px);
+}
+
+.icon {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+/* Nav Linkləri və Animasiyalı Alt-xətt */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: #4a4036;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    position: relative;
+    padding: 8px 0;
+    transition: color 0.3s;
+}
+
+.nav-item::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #8b5e3c;
+    transition: width 0.3s ease;
+}
+
+.nav-item:hover::after {
+    width: 100%;
+}
+
+.nav-item:hover {
+    color: #8b5e3c;
+}
+
+/* 3. Main Content Section */
+.main {
+    margin-top: 80px;
+    padding: 0 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+
+.hi {
+    font-size: 70px;
+    color: #cfae70;
+    font-family: 'Playfair Display', serif;
+    line-height: 1;
+}
+
+.welcome {
+    font-size: 35px;
+    color: #8b5e3c;
+    margin: 10px 0;
+}
+
+.name {
+    font-size: 60px;
+    font-weight: 600;
+    color: #b08d57;
+    margin-bottom: 20px;
+}
+
+.about-me {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #4a4036;
+    max-width: 550px;
+}
+
+/* Şəkil Effekti */
+#my-photo {
+    width: 450px;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; /* Estetik asimmetrik kəsim */
+    box-shadow: 20px 20px 60px rgba(0,0,0,0.1);
+    transition: 0.5s;
+}
+
+#my-photo:hover {
+    border-radius: 50%;
+    transform: rotate(2deg);
+}
+
+/* 4. Footer & HR */
+.footer {
+    width: 100%;
+    text-align: center;
+    margin-top: 100px;
+    padding-bottom: 30px;
+}
+
+.hr {
+    width: 100%;
+    border: 0;
+    border-top: 5px solid #d2b48c; /* Burlywood */
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.footer p {
+    color: #4a4036;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+/* Mobil Uyğunluq (Responsive) */
+@media (max-width: 968px) {
+    .main {
+        flex-direction: column;
+        text-align: center;
+    }
+    .container {
+        padding: 0 20px;
+    }
+    .nav-links {
+        gap: 15px;
+    }
+    .nav-item {
+        font-size: 12px;
+    }
+}
